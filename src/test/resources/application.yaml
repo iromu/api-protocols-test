@@ -1,0 +1,26 @@
+server.port: 0
+server.http2.enabled: true
+
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+        graphql: debug
+        http: debug
+    reactor:
+      netty: debug
+
+spring:
+  graphql:
+    graphiql.enabled: true
+    rsocket:
+      mapping: graphql
+    websocket:
+      path: /graphql
+    schema:
+      printer:
+        enabled: 'true'
+
+spring.profiles.active: rsocket-over-tcp
+

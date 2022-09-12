@@ -1,0 +1,31 @@
+server.port: 8888
+server.http2.enabled: true
+management:
+  endpoints:
+    web:
+      exposure:
+        include: health,metrics,info
+logging:
+  level:
+    org:
+      springframework:
+        web: debug
+        graphql: debug
+        http: debug
+    reactor:
+      netty: debug
+spring:
+  application:
+    name: api-protocols-test
+  graphql:
+    graphiql.enabled: true
+    rsocket:
+      mapping: graphql
+    websocket:
+      path: /graphql
+    schema:
+      printer:
+        enabled: 'true'
+
+spring.rsocket.server.port: 7000
+spring.rsocket.server.transport: tcp
